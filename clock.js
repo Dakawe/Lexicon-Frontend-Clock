@@ -17,8 +17,9 @@ function newTime(h, m) {
   let hournames = ["tolv", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio", "elva", "tolv", "ett"];
   let cText = document.getElementById("clock-text");
   let aHour = hour > 12 ? hour - 12 : hour;
-  timetxt.textContent = !(minute % 5) ? `${minutenames[minute / 5]} ${hournames[minute > 29 ? aHour + 1 : aHour]}.` : "";
-  cText.style.display = !(minute % 5) ? "block" : "none";
+  
+  time = (hour < 10 ? "0" + hour : hour)+':'+(minute < 10 ? "0" + minute : minute);
+  timetxt.textContent = !(minute % 5) ? `${minutenames[minute / 5]} ${hournames[minute > 29 ? aHour + 1 : aHour]}.` : time;
   console.log();
 
   let digitalclock = document.getElementById("digital");
@@ -28,7 +29,6 @@ function newTime(h, m) {
   }
 
   time = "h" + (hour < 10 ? "0" + hour : hour) + "m" + (minute < 10 ? "0" + minute : minute);
-
   console.log(time);
 
   for (var i = 1; i <= 5; i++) {
