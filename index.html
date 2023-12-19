@@ -8,14 +8,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main onclick="newTime()">
+    <nav>
+      <p id="ANAC" onclick="ANAC()">Numberless</p>
+      <p id="ANA" onclick="ANA()" style="display: none">Analog Clock</p>
+      <p id="DIG" onclick="DIG()">Digital Clock</p>
+      <p id="RL" onclick="RL()">Realtime</p>
+    </nav>
+    <main id="analog" onclick="newTime()">
       <img src="assets/face.svg" id="clock" />
       <img src="assets/hand-hours.svg" id="hour-pointer" />
       <img src="assets/hand-minutes.svg" id="minute-pointer" />
-      <p id="clock-text">Klockan är <b id="timename">test</b></p>
     </main>
+    <main id="digital" onclick="newTime()" style="display: none"><div id="digital-line"></div></main>
+
+    <p id="clock-text">Klockan är <b id="timename">test</b></p>
     <script>
-      newTime();
+      h = new Date().getHours();
+      m = new Date().getMinutes();
+      newTime(h, m);
     </script>
   </body>
 </html>

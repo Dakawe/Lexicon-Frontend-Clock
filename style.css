@@ -1,26 +1,26 @@
 * {
   margin: 0;
+  user-select: none;
 }
 body {
   background-color: #f2c62a;
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-flow: column;
   align-items: center;
+  gap: 50px;
+  font-size: 3em;
+  font-family: cambria;
+  overflow-x: hidden;
 }
-main {
+#analog {
+  cursor: pointer;
   background-color: white;
   position: relative;
   border-radius: 500px;
-  #clock-text {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: -150px;
-    font-size: 3em;
-    font-family: cambria;
-  }
+  border: 10px solid rgb(209, 184, 42);
+  box-shadow: 2px 2px 15px black;
   #minute-pointer {
     position: absolute;
     left: 0;
@@ -29,5 +29,58 @@ main {
     position: absolute;
     left: 0;
   }
- 
+}
+
+#digital {
+  cursor: pointer;
+  background-color: black;
+  border-radius: 16px;
+  border: 5px solid rgb(242, 242, 242);
+  box-shadow: 5px 5px 15px black;
+  position: relative;
+  display: flex;
+  justify-items: stretch;
+
+  p {
+    aspect-ratio: 1;
+    color: white;
+    width: 20%;
+    padding: 12px 25px;
+    font-size: 2em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div {
+    justify-self: center;
+    align-self: center;
+    opacity: 0.25;
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+#clock-text {
+  width: 100%;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  background-color: rgb(134, 133, 41);
+  padding: 25px;
+  justify-content: center;
+  gap: 50px;
+  p {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+  }
+  p:hover {
+    color: white;
+  }
 }
